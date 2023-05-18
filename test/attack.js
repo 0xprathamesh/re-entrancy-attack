@@ -33,7 +33,7 @@ describe("Attack", function () {
     await tx.wait();
 
     // Balance of GoodContract is now Zero
-    balanceETH = await ethers.providers.getBalance(goodContract.address);
+    balanceETH = await ethers.provider.getBalance(goodContract.address);
     expect(balanceETH).to.equal(BigNumber.from("0"));
 
     // Balance of BadContract is now 11 ETH (10 ETH stolen + 1 ETH from attacker)
